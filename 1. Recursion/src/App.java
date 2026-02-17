@@ -44,6 +44,16 @@ public class App {
         }
         return total;
     }
+   
+    public static int fibonacci(int x){
+        int fib;
+        if(x == 0 || x == 1){
+            fib = 1;
+        } else {
+            fib = fibonacci(x-1) + fibonacci(x-2);
+        }
+        return fib;
+    }
     public static void main(String[] args) throws Exception {
         int entry;
         
@@ -57,9 +67,14 @@ public class App {
                     System.out.println(sumEven(max, totalEven));
                 }
                 case 4 -> {
-                    System.out.println(" --- Fatorial ---");
-                    int x = readInt("Qual fatorial deseja saber?: ");
+                    System.out.print(" --- Fatorial ---");
+                    int x = readInt("Deseja saber o fatorial de qual número?: ");
                     System.out.printf("O fatorial de %d é: %d.", x, factorial(x));
+                }
+                case 5 -> {
+                    System.out.print(" --- Fibonacci ---");
+                    int x = readInt("Deseja saber o Fibonacci de qual número?: ");
+                    System.out.printf("O Fibonacci de %d é: %d.", x, fibonacci(x));
                 }
             }
 
